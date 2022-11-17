@@ -7,13 +7,8 @@ jobs:
       - script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_12_0
         displayName: 'Select the Xamarin SDK version'
         enabled: false
-      - task: MSBuild@1
-        displayName: Build Android samples
-        inputs:
-          solution: '**/*Droid*.csproj'
-          configuration: 'Debug'
-          msbuildArguments: '/restore /t:Build /p:ContinuousIntegrationBuild=true /p:Deterministic=false'
-variables:
+
+    variables:
   buildConfiguration: 'Release'
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
@@ -30,3 +25,9 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
     msbuildVersionOption: '16.0'
+      - task: MSBuild@1
+        displayName: Build Android samples
+        inputs:
+          solution: '**/*Droid*.csproj'
+          configuration: 'Debug'
+          msbuildArguments: '/restore /t:Build /p:ContinuousIntegrationBuild=true /p:Deterministic=false'
