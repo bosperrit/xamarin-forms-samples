@@ -16,9 +16,6 @@ jobs:
     displayName: 'Select the Xamarin SDK version'
     enabled: false
 
-  variables:
-buildConfiguration: 'testing'
-outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
