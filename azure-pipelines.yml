@@ -7,18 +7,18 @@ jobs:
     apksignerKeystoreAlias: 'key1'
     apksignerKeyPassword: 'lascha100'
   
-  - job: build_android_samples
-    displayName: Build Android samples
-    pool:
-      vmImage: 'macos-latest'
-    steps:
-      - script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_12_0
-        displayName: 'Select the Xamarin SDK version'
-        enabled: false
+- job: build_android_samples
+  displayName: Build Android samples
+  pool:
+    vmImage: 'macos-latest'
+  steps:
+  - script: sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 5_12_0
+      displayName: 'Select the Xamarin SDK version'
+      enabled: false
 
-    variables:
-  buildConfiguration: 'Release'
-  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+  variables:
+buildConfiguration: 'Release'
+outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
 - task: NuGetToolInstaller@1
