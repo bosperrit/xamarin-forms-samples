@@ -6,6 +6,7 @@ jobs:
     apksignerKeystorePassword: 'lascha100'
     apksignerKeystoreAlias: 'key1'
     apksignerKeyPassword: 'lascha100'
+  
   - job: build_android_samples
     displayName: Build Android samples
     pool:
