@@ -16,8 +16,8 @@ jobs:
     displayName: 'Select the Xamarin SDK version'
     enabled: false
 
-variables:
-buildConfiguration: 'Release'
+  variables:
+buildConfiguration: 'testing'
 outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 steps:
